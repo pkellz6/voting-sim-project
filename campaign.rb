@@ -68,13 +68,15 @@ class Campaign
       puts
       puts
       sleep(2)
-    else
+    elsif @votes_republican < @votes_democrat
       puts "votes are being tallied up..."
       sleep(3)
       puts "Democrats win!!!!"
       puts
       puts
-      sleep(2)                                            
+      sleep(2)
+    else
+      puts "no votes have been cast"                                           
     end
   end
 end
