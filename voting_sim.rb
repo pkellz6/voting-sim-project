@@ -54,6 +54,12 @@ class VoterSim
         (V) Voter
         END
         character_choice = gets.chomp.downcase
+        while  !(character_choice == "c") && !(character_choice == "v")
+            puts "Invalid Selection"
+            spacer
+            display_choices
+            character_choice = gets.chomp.downcase
+        end
           case character_choice
           when "c"
             create_candidate
@@ -205,6 +211,12 @@ end
         (D)emocrat or (R)epublican
         END
         party = gets.chomp.downcase
+    while  !(party == "d") && !(party == "r")
+            puts "Invalid Selection"
+            spacer
+            display_choices
+            party = gets.chomp.downcase
+    end
         case party
         when "d"
           c.party = "Democrat"
@@ -242,6 +254,12 @@ end
         (P)rogressive, (C)onservative, (L)ibertarian, (M)assachusetts Democrat, or (I)ndependent
         END
         new_politics = gets.chomp.downcase
+    while  !(new_politics == "p") && !(new_politics == "c") && !(new_politics == "l") && !(new_politics == "m") && !(new_politics == "i")
+            puts "Invalid Selection"
+            spacer
+            display_choices
+            new_politics = gets.chomp.downcase
+    end
         case new_politics
         when "p"
           v.politics =  "Progressive"
