@@ -11,6 +11,18 @@ class VoterSim
     @voter_array = []
   end
 
+# METHOD FOR AN INVALID ENTRY
+#   while true
+#   def invalid_choice
+#         # puts "invalid Choice"
+#         x = gets.chomp
+#         if x =~ /\d/
+#           main_menu_user_choice
+#         else
+#           break
+#       end
+#   end
+
   def intro
     sleep(1)
       puts "What would you like to do?"
@@ -27,6 +39,12 @@ class VoterSim
 # METHOD FOR THE MAIN MENU
   def main_menu_user_choice
       user_choice = gets.chomp.downcase
+  while  !(user_choice == "l") && !(user_choice == "c") && !(user_choice == "u") && !(user_choice == "v") && !(user_choice == "e")
+        puts "Invalid Selection"
+        spacer
+        display_choices
+        user_choice = gets.chomp.downcase
+  end
       case user_choice
       when "c"
         puts <<-END
@@ -49,6 +67,12 @@ class VoterSim
         (C)andidate list or (V)oter list
         END
         user_list = gets.chomp.downcase
+  while  !(user_list == "c") && !(user_list == "v")
+          puts "Invalid Selection"
+          spacer
+          display_choices
+          user_list = gets.chomp.downcase
+    end
         case user_list
         when "c"
           spacer
@@ -63,6 +87,12 @@ class VoterSim
         (C)andidate or (V)oter
         END
         group_select = gets.chomp.downcase
+    while  !(group_select == "c") && !(group_select == "v")
+          puts "Invalid Selection"
+          spacer
+          display_choices
+          group_select = gets.chomp.downcase
+    end
           case group_select
           when "c"
             list_candidate
@@ -90,6 +120,12 @@ class VoterSim
     (D)emocrat or (R)epublican
     END
     party = gets.chomp.downcase
+  while  !(party == "d") && !(party == "r")
+      puts "Invalid Selection"
+      spacer
+      display_choices
+      party = gets.chomp.downcase
+  end
     case party
     when "d"
       name = Candidate.new(name,"Democrat")
@@ -108,6 +144,12 @@ class VoterSim
     (P)rogressive, (C)onservative, (L)ibertarian, (M)assachusetts Democrat, or (I)ndependent
     END
     politics = gets.chomp.downcase
+  while  !(politics == "p") && !(politics == "c") && !(politics == "l") && !(politics == "m") && !(politics == "i")
+      puts "Invalid Selection"
+      spacer
+      display_choices
+      politics = gets.chomp.downcase
+  end
     case politics
     when "p"
       name = Voter.new(name, "Progressive")
