@@ -11,18 +11,6 @@ class VoterSim
     @voter_array = []
   end
 
-# METHOD FOR AN INVALID ENTRY
-#   while true
-#   def invalid_choice
-#         # puts "invalid Choice"
-#         x = gets.chomp
-#         if x =~ /\d/
-#           main_menu_user_choice
-#         else
-#           break
-#       end
-#   end
-
   def intro
     sleep(1)
       puts "What would you like to do?"
